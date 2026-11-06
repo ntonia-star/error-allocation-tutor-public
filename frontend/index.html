@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="基于课程核验资料与讲义的误差分配学习助手，支持知识问答、程序验算与分层练习。">
+  <title>误差分配 · 智能教学助手</title>
+  <link rel="stylesheet" href="/vendor/katex/katex.min.css"><link rel="stylesheet" href="/style.css?v=3">
+  <script defer src="/vendor/marked.min.js"></script><script defer src="/vendor/purify.min.js"></script>
+  <script defer src="/vendor/katex/katex.min.js"></script><script defer src="/app.js"></script>
+</head>
+<body>
+  <aside class="sidebar">
+    <a href="#home" class="brand" aria-label="误差分配学习首页"><span class="brand-mark">Σ<span>±</span></span><span>误差分配<small>智能教学助手</small></span></a>
+    <div class="nav-caption">学习空间</div>
+    <nav aria-label="主要导航">
+      <button data-view="home" class="nav-item active"><span>⌂</span>学习首页</button>
+      <button data-view="chat" class="nav-item"><span>◫</span>智能问答</button>
+      <button data-view="knowledge" class="nav-item"><span>▤</span>课程知识库</button>
+      <button data-view="calculate" class="nav-item"><span>ƒ</span>计算与验算</button>
+      <button data-view="practice" class="nav-item"><span>✎</span>考试训练</button>
+    </nav>
+    <div class="sidebar-note"><div class="tiny-label">学习路径</div><ol><li>理解分配约束</li><li>按等影响原则分配</li><li>调整方案并验算</li></ol><button data-view="knowledge" class="text-button">打开知识导航 ↗</button></div>
+    <div class="sidebar-bottom"><span class="status-dot"></span>知识库未附带课程资料<small>公开源码 · 自行导入资料</small></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span class="breadcrumb">课程学习 <span>/</span> <strong id="page-name">学习首页</strong></span><span class="course-tag">公开源码 · 待导入资料</span></header>
+    <main id="main" tabindex="-1"><div class="notice">公开源码版不附带教材、课件、页面图片或课程知识摘录。导入有权使用并核验过的资料后，才能使用课程问答与出题。计算工具可独立使用。</div>
+      <section id="view-home" class="view">
+        <div class="eyebrow">从允许的总误差，到可行的测量方案</div>
+        <div class="hero"><div><h1>把每一份误差，<br>分配得有理有据。</h1><p>沿着核验资料理解原理，用计算检验方案。<br>你的误差分配学习，从一个问题开始。</p><button class="primary" data-view="chat">开始提问 <span>↗</span></button></div>
+          <div class="budget-visual" aria-label="等影响分配示意"><div class="visual-caption">等影响 · 不是等误差</div><div class="budget-total">允许的总误差 <strong>σ<sub>y</sub></strong></div><div class="budget-branches"><div><span>a₁σ₁</span><i></i></div><div><span>a₂σ₂</span><i></i></div><div><span>a₃σ₃</span><i></i></div></div><div class="visual-formula">各分项影响相等，合成结果满足总预算</div><span class="diagram-note">独立、一阶模型下的示意</span></div>
+        </div>
+        <div class="home-question"><span class="question-icon">？</span><input id="home-input" aria-label="输入学习问题" placeholder="试着问：为什么等影响不等于各项误差相等？" maxlength="4000"><button id="home-send" class="primary compact">提问 ↗</button></div>
+        <div class="section-title"><h2>今天，从哪里开始？</h2><span>理解 · 推导 · 应用</span></div>
+        <div class="entry-grid">
+          <button class="entry-card" data-view="knowledge"><span class="card-number">01 / 理解</span><h3>建立知识框架 <span>↗</span></h3><p>从分配的定义，到调整与验算<br>沿核验资料主线连接知识点。</p><span class="card-link">浏览课程知识</span></button>
+          <button class="entry-card" data-view="calculate"><span class="card-number">02 / 应用</span><h3>让每一步可验证 <span>↗</span></h3><p>输入误差预算与传递系数<br>查看分配过程和合成验算。</p><span class="card-link">打开计算工具</span></button>
+          <button class="entry-card" data-view="practice"><span class="card-number">03 / 巩固</span><h3>把理解变成得分 <span>↗</span></h3><p>记忆、理解与应用分层练习<br>先独立作答，再核对解析。</p><span class="card-link">开始课程训练</span></button>
+        </div>
+        <div class="section-title"><h2>带着问题学习</h2><span>导入资料后启用知识检索</span></div>
+        <div class="quick-grid"><button data-question="什么是误差分配？与误差合成有什么关系？">误差分配与误差合成有什么关系？ <span>↗</span></button><button data-question="详细推导核验资料的等影响分配公式，并说明适用条件。">等影响分配公式是怎样推导的？ <span>↗</span></button><button data-question="如何核对不同来源的计算参数与条件？">如何核对不同来源的参数？ <span>↗</span></button><button data-question="误差分配调整后，为什么必须重新验算？">调整以后，为什么还需要验算？ <span>↗</span></button></div>
+        <div class="evidence-note"><span>◎</span><p><strong>知识有出处，计算有条件。</strong>回答展示课程来源。资料存在差异时分别说明；缺少可靠依据时明确告知。</p><button data-view="knowledge" class="text-button">查看课程依据 ↗</button></div>
+      </section>
+      <section id="view-chat" class="view hidden">
+        <div class="page-heading"><div><div class="eyebrow">课程专属问答</div><h1>把问题，讲清楚。</h1><p>概念、公式、计算与方法比较，都从课程依据出发。</p></div><button id="new-chat" class="secondary">＋ 新建对话</button></div>
+        <div class="chat-shell"><div class="chat-toolbar"><div class="segmented" id="depth-control" aria-label="回答深度"><button data-mode="brief">一句话概括</button><button data-mode="standard" class="selected">标准讲解</button><button data-mode="detailed">详细推导</button></div><span class="muted">附课程来源</span></div>
+          <div id="messages" class="messages" aria-live="polite"><div class="chat-welcome"><span class="welcome-symbol">Σ</span><h2>你想理解哪一个知识点？</h2><p>可以直接输入题目。计算题请给出已知量、单位和适用条件。</p><button data-question="详细说明按等影响原则分配误差的方法。" class="secondary">从等影响原则开始 ↗</button></div></div>
+          <form id="chat-form" class="composer"><label class="sr-only" for="chat-input">你的问题</label><textarea id="chat-input" placeholder="输入问题；Shift + Enter 换行" rows="2" maxlength="4000" required></textarea><div><span>计算题请注明单位与条件</span><button id="send-chat" class="primary compact" type="submit">发送 ↑</button></div></form>
+        </div><p class="footnote">答案用于学习辅导；请核对公式条件及来源中的具体参数。对话仅保存在当前浏览器，可通过“新建对话”清除。</p>
+      </section>
+      <section id="view-knowledge" class="view hidden">
+        <div class="page-heading"><div><div class="eyebrow">循着核验资料，建立联系</div><h1>课程知识库</h1><p>按原始资料核验整理，保留每个结论的来处。</p></div><span class="outline-tag">资料由使用者导入</span></div>
+        <div class="knowledge-controls"><div id="categories" class="filter-row"></div><input id="knowledge-search" class="search-field" placeholder="搜索知识点、条件或公式…" aria-label="搜索知识库"></div>
+        <div id="knowledge-list" class="knowledge-grid"></div>
+      </section>
+      <section id="view-calculate" class="view hidden">
+        <div class="page-heading"><div><div class="eyebrow">先确定模型，再进行分配</div><h1>计算与验算</h1><p>程序计算数值，逐步展示依据、分配和合理性检查。</p></div><span class="outline-tag">无需模型连接</span></div>
+        <div class="calc-layout"><div class="panel"><div class="segmented" id="calc-tabs"><button data-calc="equal" class="selected">等影响分配</button><button data-calc="cylinder">圆柱体例题</button></div>
+          <form id="calc-form">
+            <div id="calc-equal"><label>允许的总误差 <input name="total" type="number" step="any" min="0.000000000001" value="0.6"></label><label>各项传递系数 <input name="coefficients" value="1, 2, 3" placeholder="用逗号分隔，如 1, 2, 3"></label><p class="field-note">系数可有正负；按幅值分配。请自行统一输入与输出单位，零系数需重新检查模型。</p></div>
+            <div id="calc-cylinder" class="hidden"><div class="field-row"><label>直径 D / mm<input name="diameter" type="number" step="any" value="12"></label><label>高度 h / mm<input name="height" type="number" step="any" value="30"></label></div><label>允许体积相对误差 / %<input name="relative_percent" type="number" step="any" value="2"></label><div class="field-row"><label>验算 δD / mm <small>选填</small><input name="diameter_error" type="number" step="any" value="0.04"></label><label>验算 δh / mm <small>选填</small><input name="height_error" type="number" step="any" value="0.04"></label></div><p class="field-note">按数学示例取 π = 3.1416。验算误差需同时填写，留空两项则只做初始分配。</p></div>
+            <label class="check-label"><input type="checkbox" id="conditions" required><span>确认使用核验资料一阶、不相关的统计合成约定，且各量的误差口径一致。</span></label><p class="field-note">若要求确定性最坏情况上界，或存在相关性，请先向助手说明，不能直接套用本工具。</p><button type="submit" class="primary full">计算并验算 ↗</button>
+          </form>
+        </div><div id="calc-result" class="panel result-panel"><span class="tiny-label">计算笔记</span><div class="result-placeholder"><span>√Σ</span><h3>从总预算，回到每个分项</h3><p>确认适用条件后，查看完整计算过程。<br>没有有效条件的数值，不构成可靠结论。</p></div></div></div>
+      </section>
+      <section id="view-practice" class="view hidden">
+        <div class="page-heading"><div><div class="eyebrow">理解之后，再往前一步</div><h1>考试训练</h1><p>先作答，再看解析。每道题都有可追溯的课程依据。</p></div><button id="generate-practice" class="primary">＋ 智能出题</button></div>
+        <div class="practice-toolbar"><div id="level-control" class="segmented"><button data-level="记忆" class="selected">记忆 · 概念与公式</button><button data-level="理解">理解 · 原理与条件</button><button data-level="应用">应用 · 计算与方案</button></div><span class="muted">基础题库 + 智能变式</span></div>
+        <div id="practice-status" role="status"></div><div id="practice-list"></div>
+      </section>
+    </main><footer>误差分配智能教学助手 <span>课程知识 · 分层理解 · 可靠计算</span></footer>
+  </div>
+  <div id="toast" class="toast hidden" role="status"></div>
+</body></html>

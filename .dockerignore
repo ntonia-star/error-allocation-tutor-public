@@ -1,0 +1,11 @@
+.git
+.env
+.env.*
+tmp
+tools
+output
+knowledge_source
+knowledge_sourse
+knowledge_base/raw_text
+knowledge_base/metadata
+tests

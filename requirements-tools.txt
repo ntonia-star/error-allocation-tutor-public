@@ -1,0 +1,7 @@
+# Optional: only needed to re-extract new course files, not to serve the app.
+pypdf>=5,<7
+pypdfium2>=4,<6
+python-pptx>=1,<2
+Pillow>=10,<13
+# QR code generation is optional after a real public URL exists.
+qrcode>=8,<9

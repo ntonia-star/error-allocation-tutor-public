@@ -1,0 +1,17 @@
+.env
+.env.*
+!.env.example
+__pycache__/
+*.pyc
+.venv/
+tmp/
+tools/
+output/
+knowledge_source/**
+!knowledge_source/.gitkeep
+knowledge_sourse/
+knowledge_base/raw_text/
+knowledge_base/metadata/
+knowledge_base/pages/*
+!knowledge_base/pages/.gitkeep
+tests/results/
